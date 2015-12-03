@@ -1,0 +1,166 @@
+[
+	{
+		"title": "Total",
+		"badge": "3686",
+		"icon": "mif-books",
+		"url": null,
+		"data": 
+		{
+			"publications": 
+			[
+				{
+					"year": "2012",
+					"total": "1926",
+					"increase": "0"
+				},
+
+				{
+					"year": "2013",
+					"total": "2880",
+					"increase": "954"
+				},
+
+				{
+					"year": "2014",
+					"total": "3696",
+					"increase": "816"
+				}
+			]
+		}
+	},
+
+	{
+		"title": "Chemistry",
+		"badge": "731",
+		"icon": "mif-lab",
+		"url": null,
+		"data": 
+		{
+			"publications": 
+			[
+				{
+					"year": "2012",
+					"increase": "571"
+				},
+
+				{
+					"year": "2013",
+					"increase": "578"
+				},
+
+				{
+					"year": "2014",
+					"increase": "731"
+				}
+			]
+		}
+	},
+
+	{
+		"title": "Medicine",
+		"badge": "700",
+		"icon": "mif-stethoscope",
+		"url": null,
+		"data": 
+		{
+			"publications": 
+			[
+				{
+					"year": "2012",
+					"increase": "364"
+				},
+
+				{
+					"year": "2013",
+					"increase": "523"
+				},
+
+				{
+					"year": "2014",
+					"increase": "700"
+				}
+			]
+		}
+	},
+
+	{
+		"title": "Mathematics",
+		"badge": "646",
+		"icon": "mif-calculator2",
+		"url": null,
+		"data": 
+		{
+			"publications": 
+			[
+				{
+					"year": "2012",
+					"increase": "286"
+				},
+
+				{
+					"year": "2013",
+					"increase": "568"
+				},
+
+				{
+					"year": "2014",
+					"increase": "646"
+				}
+			]
+		}
+	},
+
+	{
+		"title": "Engineering",
+		"badge": "599",
+		"icon": "mif-cogs",
+		"url": null,
+		"data": 
+		{
+			"publications": 
+			[
+				{
+					"year": "2012",
+					"increase": "206"
+				},
+
+				{
+					"year": "2013",
+					"increase": "394"
+				},
+
+				{
+					"year": "2014",
+					"increase": "599"
+				}
+			]
+		}
+	},
+
+	{
+		"title": "Physics",
+		"badge": "599",
+		"icon": "mif-space-shuttle",
+		"url": null,
+		"data": 
+		{
+			"publications": 
+			[
+				{
+					"year": "2012",
+					"increase": "511"
+				},
+
+				{
+					"year": "2013",
+					"increase": "474"
+				},
+
+				{
+					"year": "2014",
+					"increase": "599"
+				}
+			]
+		}
+	}
+]

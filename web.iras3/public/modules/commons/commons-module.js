@@ -1,0 +1,1 @@
+var commons = angular.module('commons', []);

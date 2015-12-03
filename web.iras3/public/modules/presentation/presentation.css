@@ -1,0 +1,38 @@
+.carousel-control.right {
+	background-image: none;
+}
+
+.carousel-control.left {
+	background-image: none;
+}
+
+.carousel-inner {
+	background-color: LightGray;
+	margin-bottom: 20px;
+}
+
+.panel {
+	border-radius: inherit;
+	box-shadow: inherit;
+}
+
+.panel-presentation .panel-body {
+	padding: 0px;
+}
+
+.panel-presentation {
+	border: 0px NONE LightGray;
+	background-color: White;
+	margin-bottom: 0px;
+}
+
+.panel-presentation .info {
+	/*border: 1px SOLID DarkBlue;*/
+	color: Black;
+	padding: 0px 10px 0px 10px;
+	margin-bottom: 0px;
+}
+
+.panel-presentation .carousel-indicators{
+	bottom:5px;
+}

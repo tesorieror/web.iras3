@@ -1,0 +1,19 @@
+<div class="panel panel-presentation">
+	<!-- 
+			<div class="panel-heading">
+				<h3 class="panel-title">Ranking</h3>
+			</div>
+			 -->
+	<div class="panel-body">
+		<uib-carousel interval="myInterval" no-wrap="noWrapSlides" class="tile-wide-y"> <uib-slide ng-repeat="slide in slides" active="slide.active"> <img
+			ng-src="{{slide.image}}" style="margin: auto;" ng-click="slideClicked($index)"> </uib-slide> </uib-carousel>
+
+		<div class="panel info bg-grayLighter fg-dark tile-square-y">
+			<h4>{{slide.title}}</h4>
+			<h5>{{slide.subtitle}}</h5>
+	
+			<p><small>{{slide.info}}</small></p>
+
+		</div>
+	</div>
+</div>

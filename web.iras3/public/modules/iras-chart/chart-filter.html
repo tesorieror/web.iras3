@@ -1,0 +1,93 @@
+<div class="container chart-filter">
+	<div class="row">
+		<div class="col-xs-12 iras">
+			<page-header title="IRAS" subtitle="Chart Filter"></page-header>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="btn-toolbar" role="toolbar" aria-label="Chart toolbar">
+						<div class="btn-group" role="group" aria-label="Chart group">
+							<button type="button" class="btn btn-default" aria-label="View Chart" data-ng-click="chartModeClicked()">
+								<span class="mif-chart-line"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <span class="mif-folder-plus">&nbsp;</span> -->
+	<!-- <span class="mif-chart-line"></span> -->
+	<div class="row">
+		<div class="col-xs-6 categories">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Categories</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="categoryStringFilter" placeholder="Filter catgories">
+					</div>
+					<div class="well well-sm" style="overflow: auto;">
+						<ul class="list-unstyled">
+							<li data-ng-repeat="cat in categories | filter:categoryStringFilter" class="noselect" data-ng-class="{'category-not-visible':!cat.isVisible()}">
+								<div class="title">
+									<span
+										data-ng-class="{'glyphicon glyphicon-exclamation-sign error':getSelectedTagsForCategory(cat).length==0,'glyphicon glyphicon-ok ok':getSelectedTagsForCategory(cat).length==1,'glyphicon glyphicon-warning-sign warn':getSelectedTagsForCategory(cat).length>1}"></span>
+									<span data-ng-class="{'pointer':true,'icon-radio-unchecked':!cat.isSelected() ,'icon-radio-checked':cat.isSelected()}"
+										data-ng-click="categoryClicked(cat)"></span> <span data-ng-click="categoryExpandCollapseIconClicked(cat)"
+										data-ng-class="{'pointer':true,'glyphicon glyphicon-triangle-right':cat.isCollapsed() ,'glyphicon glyphicon-triangle-bottom':cat.isExpanded()}"></span>
+									<span data-ng-click="categoryVisibleIconClicked(cat)"
+										data-ng-class="{'pointer':true,'icon-eye-3': cat.isVisible() ,'icon-eye-blocked': !cat.isVisible()}"></span> {{cat.description}}&nbsp;({{cat._id}})
+								</div>
+
+								<ul class="list-unstyled" data-ng-show="cat.isExpanded()">
+									<li data-ng-repeat="tag in getSelectedTagsForCategory(cat) | filter:categoryStringFilter" class="noselect dependencies">
+										<div>
+											<span data-ng-click="selectedTagExpandCollapseIconClicked(tag)" data-ng-show="tag.hasSelectedDependencies()"
+												data-ng-class="{'pointer':true,'glyphicon glyphicon-triangle-right' : tag.isCollapsed() ,'glyphicon glyphicon-triangle-bottom' : tag.isExpanded()}"></span>&nbsp;&nbsp;
+											{{tag.description}}
+										</div>
+										<div class="dependency-tags" data-ng-repeat="dep in tag.getSelectedDependenciesForTag()" data-ng-show="tag.isExpanded()">
+											<div data-ng-repeat="depTag in dep.tags">
+												<small> <span data-ng-class="{'glyphicon glyphicon-tags':$first,'glyphicon glyphicon-none':!$first}"></span>&nbsp;&nbsp;
+													{{depTag.description}}&nbsp;({{depTag.category}})
+												</small>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-6 tags">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{selectedCategory.description}}</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<input type="text" class="form-control" ng-model="tagStringFilter" placeholder="Filter tags">
+					</div>
+					<div class="well well-sm" style="overflow: auto;">
+						<ul class="list-unstyled">
+							<li data-ng-repeat="tag in tags | filter:tagStringFilter" class="noselect">
+								<div data-ng-click="tagSelectedIconClicked(tag)">
+									<span class="icon-checkbox-unchecked" ng-hide="tag.isSelected()">&nbsp;</span><span class="icon-checkbox-checked" ng-show="tag.isSelected()">&nbsp;</span>{{tag.description}}
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

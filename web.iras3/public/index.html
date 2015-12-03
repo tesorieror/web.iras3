@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+
+
+<title>Institutional Ranking Analysis System</title>
+<!--
+<link rel="shortcut icon" href="/bootmetro/assets/ico/favicon.ico">
+-->
+<!-- Normalize CSS -->
+<link href="/normalize.css" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"
+	integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+
+<!-- Bootmetro -->
+
+<link href="/bootmetro/assets/css/bootmetro-icons.css" rel="stylesheet">
+
+<!-- MetroUI Icons CSS -->
+<link href="/metro-ui/css/metro-icons.css" rel="stylesheet">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="/underscore/underscore-min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+<script src="/angular-google-chart-0.1.0b/ng-google-chart.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+
+<!-- Angular spinner 
+<script src="/spin/spin.min.js"></script>
+<script src="/angular-spinner/angular-spinner.min.js"></script>
+-->
+
+<!-- 
+Application Controllers 
+-->
+
+<!-- Modules -->
+
+<!-- Application Module -->
+<script src="/app.js"></script>
+<script src="/route.js"></script>
+<link href="/iras.css" rel="stylesheet">
+
+<!-- Commons Module -->
+<script src="/modules/commons/commons-module.js"></script>
+<script src="/modules/commons/commons-service.js"></script>
+
+<!-- Database Module-->
+<script src="/modules/iras-database/iras-database-module.js"></script>
+<script src="/modules/iras-database/iras-database-factory.js"></script>
+
+<!-- Directives -->
+<script src="/directives/page-header/page-header.js"></script>
+<link href="/directives/page-header/page-header.css" rel="stylesheet">
+
+<!-- Chart Module -->
+<script src="/modules/iras-chart/chart-module.js"></script>
+<!-- Chart Module Services -->
+<script src="/modules/iras-chart/chart-builder.js"></script>
+<script src="/modules/iras-chart/chart-filter-selection.js"></script>
+<script src="/modules/iras-chart/category-service.js"></script>
+<script src="/modules/iras-chart/tag-service.js"></script>
+<!-- Chart Module Pages -->
+<script src="/modules/iras-chart/chart-filter.js"></script>
+<link href="/modules/iras-chart/chart-filter.css" rel="stylesheet">
+<script src="/modules/iras-chart/chart.js"></script>
+<link href="/modules/iras-chart/chart.css" rel="stylesheet">
+
+<!-- 
+<script src="/services/database.js"></script>
+
+<script src="/services/chart-filter-selection.js"></script>
+<script src="/services/chart-builder.js"></script>
+ 
+<script src="/modules/presentation/presentation.js"></script>
+<link href="/modules/presentation/presentation.css" rel="stylesheet">
+<script src="/modules/info-tile/info-tile.js"></script>
+<link href="/modules/info-tile/info-tile.css" rel="stylesheet">
+<script src="/modules/icon-tile/icon-tile.js"></script>
+<link href="/modules/icon-tile/icon-tile.css" rel="stylesheet">
+<script src="/modules/page-header/page-header.js"></script>
+<link href="/modules/page-header/page-header.css" rel="stylesheet">
+
+
+<script src="/pages/main/main.js"></script>
+<link href="/pages/main/main.css" rel="stylesheet">
+
+
+<script src="/pages/chart/chart.js"></script>
+<link href="/pages/chart/chart.css" rel="stylesheet">
+<script src="/pages/chart-filter/chart-filter.js"></script>
+<link href="/pages/chart-filter/chart-filter.css" rel="stylesheet">
+ -->
+
+<!--
+<script src="/pages/about-unit/about-unit.js"></script>
+<link href="/pages/about-unit/about-unit.css" rel="stylesheet">
+ -->
+
+<script src="/fix-page-title.js"></script>
+
+</head>
+<!-- 
+<body data-ng-app='app' style="background-image: url('/img/background.jpeg')">
+ -->
+
+<body data-ng-app='app' class="iras">
+	<div class="container-fluid">
+		<div data-ng-controller="RouteCtrl" style="height: 100%">
+			<div data-ng-view style="height: 100%"></div>
+		</div>
+	</div>
+</body>
+</html>
