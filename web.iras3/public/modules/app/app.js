@@ -4,7 +4,7 @@
 // 'angularSpinner', 'ngAnimate'
 // ["ngRoute"]
 var app = angular.module('app', [ 'ngRoute', 'ngAnimate', 'ui.bootstrap',
-		'googlechart', 'pageHeader', 'irasDatabase', 'commons', 'irasChart' ]);
+		'googlechart', 'chartFilterPage', 'chartPage' ]);
 
 /**
  * Avoid cache (review this for optimization)

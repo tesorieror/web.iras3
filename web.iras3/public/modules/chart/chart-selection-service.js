@@ -1,4 +1,4 @@
-irasChart.factory('chartFilterSelection', function($http, $q, $log, c) {
+chart.factory('chartSelectionSrv', function($http, $q, $log, chartBuilder) {
 	var factory = {}
 
 	factory.selections = {}
@@ -6,12 +6,46 @@ irasChart.factory('chartFilterSelection', function($http, $q, $log, c) {
 	function Selection() {
 		self.self = this;
 
+		self.selectedChart = chartBuilder.TABLE_DESCRIPTION
+
 		self.categoryIds = []
 		self.selectedCategoryId = null
 		self.visibleCategoryIds = []
 		self.expandedCategoryIds = []
 		self.selectedTagIds = []
 		self.expandedSelectedTagIds = []
+
+		/***************************************************************************
+		 * Charts
+		 */
+
+		self.selectDescriptionTable = function() {
+			self.selectedChart = chartBuilder.TABLE_DESCRIPTION
+		}
+
+		self.selectFullTable = function() {
+			self.selectedChart = chartBuilder.TABLE_FULL
+		}
+
+		self.selectSummaryTable = function() {
+			self.selectedChart = chartBuilder.TABLE_SUMMARY
+		}
+
+		self.selectColumnChart = function() {
+			self.selectedChart = chartBuilder.COLUMN
+		}
+
+		self.selectLineChart = function() {
+			self.selectedChart = chartBuilder.LINE
+		}
+
+		self.selectAreaChart = function() {
+			self.selectedChart = chartBuilder.AREA
+		}
+
+		self.selectPieChart = function() {
+			self.selectedChart = chartBuilder.PIE
+		}
 
 		/***************************************************************************
 		 * Categories
@@ -113,14 +147,16 @@ irasChart.factory('chartFilterSelection', function($http, $q, $log, c) {
 
 		self.selectTagId = function(tagId) {
 			if (_.contains(self.selectedTagIds, tagId))
-				return;
+				return true;
 			self.selectedTagIds.push(tagId)
+			return true
 		}
 
 		self.unselectTagId = function(tagId) {
 			var index = self.selectedTagIds.indexOf(tagId)
 			if (index >= 0)
 				self.selectedTagIds.splice(index, 1);
+			return false;
 		}
 
 		self.isTagIdSelected = function(tagId) {
@@ -129,9 +165,9 @@ irasChart.factory('chartFilterSelection', function($http, $q, $log, c) {
 
 		self.toggleTagIdSelection = function(tagId) {
 			if (self.isTagIdSelected(tagId))
-				self.unselectTagId(tagId);
+				return self.unselectTagId(tagId);
 			else
-				self.selectTagId(tagId);
+				return self.selectTagId(tagId);
 		}
 
 		self.selectTagsByIds = function(tagIds) {

@@ -1,4 +1,4 @@
-irasChart.factory('tagSrv', function($http, $q, $log, c, irasDatabase) {
+chart.factory('chartTagSrv', function($http, $q, $log, database) {
 	var factory = {}
 
 	var selection = null;
@@ -8,17 +8,16 @@ irasChart.factory('tagSrv', function($http, $q, $log, c, irasDatabase) {
 	}
 
 	factory.loadTagsWithDependenciesForCategory = function(cat) {
-		return irasDatabase.getTagsWithDependenciesForCategoryId(cat._id)//
+		return database.getTagsWithDependenciesForCategoryId(cat._id)//
 		.then(decorateTags)
 	}
 
 	function loadTagByIdsWithDependencies(ids) {
-		return irasDatabase.getTagByIdsWithDependencies(ids)//
+		return database.getTagByIdsWithDependencies(ids)//
 		.then(decorateTags)
 	}
 
 	factory.loadSelectedTagsWithDependencies = function() {
-		$log.log(selection)
 		return loadTagByIdsWithDependencies(selection.getSelectedTagIds())
 	}
 
@@ -61,17 +60,17 @@ irasChart.factory('tagSrv', function($http, $q, $log, c, irasDatabase) {
 				if (tag.dependencies < 1)
 					return true;
 				return _.any(tag.dependencies, function(dep) {
-					return _.all(dep.tags, function(depTag) {						
+					return _.all(dep.tags, function(depTag) {
 						return tag.selection.isTagIdSelected(depTag._id)
 					})
 				})
 			}
-			
+
 			tag.hasSelectedDependencies = function() {
-//				$log.log('tag',tag)
+				// $log.log('tag',tag)
 				return tag.getSelectedDependenciesForTag().length > 0
 			}
-			
+
 			tag.getSelectedDependenciesForTag = function() {
 				return _.filter(tag.dependencies, function(dep) {
 					return _.all(dep.tags, function(depTag) {

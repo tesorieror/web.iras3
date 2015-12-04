@@ -3,7 +3,7 @@
  */
 
 // var ChartBuilderModule = angular.module('ChartBuilderModule', ['ngAnimate']);
-app
+chart
 		.factory(
 				'chartBuilder',
 				function($http, $q, $log) {
@@ -611,12 +611,18 @@ app
 					 */
 
 					function buildFullTableChart(data) {
-						var catIds = _.pluck(data.categories, '_id')
+						$log.log('data', data)
+
+						var categories = _.filter(data.categories, function(cat) {
+							return cat.isVisible()
+						})
+
+						var catIds = _.pluck(categories, '_id')
 
 						function buildCols() {
 							var cols = _
 									.map(
-											data.categories,
+											categories,
 											function(cat) {
 												return {
 													"id" : cat._id,
@@ -627,14 +633,6 @@ app
 													}
 												}
 											})
-							// Filter columns
-							cols = _.filter(cols, function(col) {
-								return data.columns[col.id]
-							})
-							// Sort Columns
-							cols = _.sortBy(cols, function(cat) {
-								return catIds.indexOf(cat._id)
-							})
 							return cols.concat({
 								"id" : "students",
 								"label" : "Students",
@@ -651,15 +649,14 @@ app
 											data.indicators,
 											function(indicator) {
 												// Filter tags
-												var tags;
-												tags = _.filter(indicator.tags, function(tag) {
-													return data.columns[tag.category]
+												var tags = _.filter(indicator.tags, function(tag) {
+													return _.contains(catIds, tag.category)
 												})
-
 												// Sort tags
 												tags = _.sortBy(tags, function(tag) {
 													return catIds.indexOf(tag.category);
 												})
+
 												return {
 													"c" : _
 															.map(

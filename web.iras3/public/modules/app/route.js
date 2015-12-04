@@ -20,17 +20,15 @@ app
 						templateUrl : '/pages/about-unit/about-unit.html',
 						controller : 'AboutUnitCtrl'
 					})
-					.when('/pages/chart', {
-						templateUrl : '/modules/iras-chart/chart.html',
-						controller : 'ChartCtrl'
-					})
 					.when('/pages/chart-filter', {
-						// templateUrl : '/modules/iras-chart/iras-chart-filter-page.html',
-						// controller : 'IrasChartFilterPageCtrl'
-
-						templateUrl : '/modules/iras-chart/chart-filter.html',
-						controller : 'ChartFilterCtrl'
+						templateUrl : '/modules/chart-filter-page/chart-filter-page.html',
+						controller : 'ChartFilterPageCtrl'
 					})
+					.when('/pages/chart', {
+						templateUrl : '/modules/chart-page/chart-page.html',
+						controller : 'ChartPageCtrl'
+					})
+
 					// .when('/goalOfUnit', {
 					// templateUrl : './goal-of-unit/goal-of-unit.html',
 					// controller : 'GoalOfUnitCtrl'

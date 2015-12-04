@@ -51,35 +51,53 @@ Application Controllers
 
 <!-- Modules -->
 
-<!-- Application Module -->
-<script src="/app.js"></script>
-<script src="/route.js"></script>
-<link href="/iras.css" rel="stylesheet">
-
 <!-- Commons Module -->
 <script src="/modules/commons/commons-module.js"></script>
+<!-- Services -->
 <script src="/modules/commons/commons-service.js"></script>
 
-<!-- Database Module-->
-<script src="/modules/iras-database/iras-database-module.js"></script>
-<script src="/modules/iras-database/iras-database-factory.js"></script>
-
+<!-- PageHeader Module -->
+<script src="/modules/page-header/page-header-module.js"></script>
 <!-- Directives -->
-<script src="/directives/page-header/page-header.js"></script>
-<link href="/directives/page-header/page-header.css" rel="stylesheet">
+<script src="/modules/page-header/page-header-directive.js"></script>
+<link href="/modules/page-header/page-header-directive.css" rel="stylesheet">
+
+<!-- Database Module -->
+<script src="/modules/database/database-module.js"></script>
+<!-- Services -->
+<script src="/modules/database/database-service.js"></script>
+
+<!-- CategoryTagFilter Module -->
+<script src="/modules/category-tag-filter/category-tag-filter-module.js"></script>
+<!-- Directives -->
+<script src="/modules/category-tag-filter/category-tag-filter-directive.js"></script>
+<link href="/modules/category-tag-filter/category-tag-filter-directive.css" rel="stylesheet">
 
 <!-- Chart Module -->
-<script src="/modules/iras-chart/chart-module.js"></script>
-<!-- Chart Module Services -->
-<script src="/modules/iras-chart/chart-builder.js"></script>
-<script src="/modules/iras-chart/chart-filter-selection.js"></script>
-<script src="/modules/iras-chart/category-service.js"></script>
-<script src="/modules/iras-chart/tag-service.js"></script>
-<!-- Chart Module Pages -->
-<script src="/modules/iras-chart/chart-filter.js"></script>
-<link href="/modules/iras-chart/chart-filter.css" rel="stylesheet">
-<script src="/modules/iras-chart/chart.js"></script>
-<link href="/modules/iras-chart/chart.css" rel="stylesheet">
+<script src="/modules/chart/chart-module.js"></script>
+<!-- Services -->
+<script src="/modules/chart/chart-builder-service.js"></script>
+<script src="/modules/chart/chart-selection-service.js"></script>
+<script src="/modules/chart/chart-category-service.js"></script>
+<script src="/modules/chart/chart-tag-service.js"></script>
+
+
+<!-- Chart Page Module -->
+<script src="/modules/chart-page/chart-page-module.js"></script>
+<!-- Pages -->
+<script src="/modules/chart-page/chart-page.js"></script>
+<link href="/modules/chart-page/chart-page.css" rel="stylesheet">
+
+<!-- Chart Filter Page Module -->
+<script src="/modules/chart-filter-page/chart-filter-page-module.js"></script>
+<!-- Pages -->
+<script src="/modules/chart-filter-page/chart-filter-page.js"></script>
+<link href="/modules/chart-filter-page/chart-filter-page.css" rel="stylesheet">
+
+<!-- Application Module -->
+<script src="/modules/app/app.js"></script>
+<script src="/modules/app/route.js"></script>
+<link href="/modules/app/app.css" rel="stylesheet">
 
 <!-- 
 <script src="/services/database.js"></script>

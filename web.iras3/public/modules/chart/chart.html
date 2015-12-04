@@ -1,0 +1,60 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 iras">
+			<page-header title="IRAS" subtitle="Chart"></page-header>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<form>
+						<div class="form-group">
+							<div class="btn-toolbar" role="toolbar" aria-label="Chart filter toolbar">
+								<div class="btn-group btn-group" role="group" aria-label="Chart Filter">
+									<button type="button" class="btn btn-default" aria-label="Filter" data-ng-click="chartFilterButtonClicked()">
+										<span class="mif-filter"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+						<fieldset>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Search" data-ng-model="searchString" data-ng-change="searchStringChanged()">
+							</div>
+						</fieldset>
+					</form>
+					<div google-chart chart="chartObject" style="width: 100%;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<small>
+						<dl class="dl-horizontal filter-summary">
+							<span data-ng-repeat="cat in categories">
+								<dt>
+									<span data-ng-bind="cat.description + ' ('+cat.name+')'"></span>
+								</dt>
+								<dd>
+									<div data-ng-repeat="tag in getSelectedTagsForCategory(cat)">
+										<span data-ng-bind="tag.description"></span>
+										<div data-ng-repeat="dep in getSelectedDependenciesForTag(tag)" style="padding-left: 10px;">
+											<span data-ng-repeat="depTag in dep.tags"> <span ng-bind="depTag.description +' ('+ depTag.category +')'"> </span>
+											</span>
+										</div>
+									</div>
+								</dd>
+							</span>
+						</dl>
+					</small>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

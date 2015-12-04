@@ -1,13 +1,11 @@
-var pageHeader = angular.module('pageHeader', []);
-
 /**
- * Icon Tile Directive
+ * Page Header Directive
  */
 
 pageHeader.directive('pageHeader', function() {
 	return {
 		restrict : 'E',
-		templateUrl : '/directives/page-header/page-header.html',
+		templateUrl : '/modules/page-header/page-header-directive.html',
 		scope : {
 			title : '@',
 			subtitle : '@'

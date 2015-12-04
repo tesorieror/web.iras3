@@ -5,10 +5,10 @@
 irasChart
 		.controller(
 				'ChartFilterCtrl',
-				function($scope, $log, $location, c, categorySrv, tagSrv, chartFilterSelection, chartBuilder) {
+				function($scope, $log, $location, c, categorySrv, tagSrv, categoryTagSelectionSrv, chartBuilder) {
 					$log.log('ChartFilter controller loaded!')
 
-					var selection = chartFilterSelection.getSelection('2-15')
+					var selection = categoryTagSelectionSrv.getSelection('2-15')
 
 					$scope.builder = chartBuilder
 
@@ -58,7 +58,6 @@ irasChart
 						$scope.tags = _.filter(tags, function(tag) {
 							return tag.isAvailable()
 						})
-
 					}
 
 					function updateSelectedTags() {
@@ -80,11 +79,7 @@ irasChart
 					 * Methods
 					 */
 
-					$scope.getSelectedTagsForCategory = function(cat) {
-						return _.select($scope.selectedTags, function(selTag) {
-							return selTag.category._id == cat._id
-						})
-					}
+
 
 					function toggleTagSelection(tag) {
 						// var selectedTags = [];
@@ -136,7 +131,38 @@ irasChart
 					 * Navigation
 					 */
 
-					$scope.chartModeClicked = function() {
+					$scope.descriptionTableButtonClicked = function() {
+						selection.selectDescriptionTable()
+						$location.path('/pages/chart')
+					}
+
+					$scope.fullTableButtonClicked = function() {
+						selection.selectFullTable()
+						$location.path('/pages/chart')
+					}
+
+					$scope.summaryTableButtonClicked = function() {
+						selection.selectSummaryTable()
+						$location.path('/pages/chart')
+					}
+
+					$scope.lineChartButtonClicked = function() {
+						selection.selectLineChart()
+						$location.path('/pages/chart')
+					}
+
+					$scope.columnChartButtonClicked = function() {
+						selection.selectColumnChart()
+						$location.path('/pages/chart')
+					}
+
+					$scope.areaChartButtonClicked = function() {
+						selection.selectAreaChart()
+						$location.path('/pages/chart')
+					}
+
+					$scope.pieChartButtonClicked = function() {
+						selection.selectPieChart()
 						$location.path('/pages/chart')
 					}
 

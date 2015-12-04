@@ -1,4 +1,4 @@
-irasChart.factory('categorySrv', function($http, $q, $log, c, irasDatabase) {
+chart.factory('chartCategorySrv', function($http, $q, $log, database) {
 	var factory = {};
 
 	var selection = null;
@@ -8,7 +8,7 @@ irasChart.factory('categorySrv', function($http, $q, $log, c, irasDatabase) {
 	}
 
 	function loadForCategoryIds(catIds) {
-		return irasDatabase.getCategoriesByIds(catIds)//
+		return database.getCategoriesByIds(catIds)//
 		.then(sortByCategoryIds)//
 		.then(decorateCategories)
 	}
