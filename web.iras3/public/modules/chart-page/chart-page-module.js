@@ -1,0 +1,1 @@
+var chartPage = angular.module('chartPage', ['chart', 'categoryTagFilter' ]);

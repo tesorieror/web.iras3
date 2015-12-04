@@ -1,0 +1,54 @@
+/*
+.chart-filter .categories .active {
+	color: red;
+}
+*/
+.category-tag-filter .pointer {
+	cursor: pointer;
+}
+
+.category-tag-filter .category-not-visible {
+	color: graytext;
+}
+
+.category-tag-filter .error {
+	color: red;
+}
+
+.category-tag-filter .ok {
+	color: green;
+}
+
+.category-tag-filter  .warn {
+	color: orange;
+}
+
+.category-tag-filter .categories ul li {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.category-tag-filter .categories ul li ul li {
+	padding-left: 42px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.category-tag-filter .glyphicon-none:before {
+	content: "\2122";
+	color: transparent !important;
+}
+
+.category-tag-filter .noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.category-tag-filter .tags ul li {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

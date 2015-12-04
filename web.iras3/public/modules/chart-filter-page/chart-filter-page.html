@@ -1,0 +1,54 @@
+<div class="container chart-filter-page">
+	<div class="row">
+		<div class="col-xs-12">
+			<page-header title="IRAS" subtitle="Chart Filter"></page-header>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="btn-toolbar" role="toolbar" aria-label="Chart Filter toolbar">
+
+						<div class="btn-group btn-group" role="group" aria-label="Table Type">
+							<button type="button" class="btn btn-default" aria-label="Full Table" data-ng-click="fullTableButtonClicked()">
+								<span class="mif-table"></span>&nbsp;<b>F</b>
+							</button>
+							<button type="button" class="btn btn-default" aria-label="Description Table" data-ng-click="descriptionTableButtonClicked()">
+								<span class="mif-table"></span>&nbsp;<b>D</b>
+							</button>
+							<button type="button" class="btn btn-default" aria-label="Summary Table" data-ng-click="summaryTableButtonClicked()">
+								<span class="mif-table"></span>&nbsp;<b>S</b>
+							</button>
+						</div>
+
+						<div class="btn-group btn-group" role="group" aria-label="Chart Type">
+							<button type="button" class="btn btn-default" aria-label="Column Chart" data-ng-click="columnChartButtonClicked()">
+								<span class="mif-chart-bars"></span>
+							</button>
+
+							<button type="button" class="btn btn-default" aria-label="Line Chart" data-ng-click="lineChartButtonClicked()">
+								<span class="mif-chart-line"></span>
+							</button>
+
+							<button type="button" class="btn btn-default" aria-label="Area Chart" data-ng-click="areaChartButtonClicked()">
+								<span class="icon-graph"></span>
+							</button>
+
+							<button type="button" class="btn btn-default" aria-label="Pie Chart" data-ng-click="pieChartButtonClicked()">
+								<span class="mif-chart-pie"></span>
+							</button>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<category-tag-filter categories="categories" selected-category="selectedCategory" tags="tags" selected-tags="selectedTags"
+		on-category-selected="categorySelected(category)"></category-tag-filter>
+
+</div>

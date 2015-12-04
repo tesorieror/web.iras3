@@ -1,1 +1,0 @@
-var irasChart = angular.module('irasChart', []);
