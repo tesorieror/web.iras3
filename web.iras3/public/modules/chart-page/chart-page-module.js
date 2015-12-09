@@ -1,1 +1,1 @@
-var chartPage = angular.module('chartPage', ['chart', 'categoryTagFilter' ]);
+var chartPage = angular.module('chartPage', ['pageHeader','chart','commons' ]);
