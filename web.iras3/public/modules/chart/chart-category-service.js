@@ -17,6 +17,10 @@ chart.factory('chartCategorySrv', function($http, $q, $log, database) {
 		return loadForCategoryIds(selection.getCategoryIds())
 	}
 
+	factory.loadVisibleCategories = function(){
+		return loadForCategoryIds(selection.getVisibleCategoryIds())
+	}	
+	
 	function sortByCategoryIds(categories) {
 		var catIds = selection.getCategoryIds()
 		return _.sortBy(categories, function(cat) {

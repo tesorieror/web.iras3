@@ -59,6 +59,10 @@ chart.factory('chartSelectionSrv', function($http, $q, $log, chartBuilder) {
 			return self.categoryIds
 		}
 
+		self.getVisibleCategoryIds = function(){
+			return self.visibleCategoryIds
+		}
+		
 		self.selectCategoryId = function(catId) {
 			self.selectedCategoryId = catId
 		}
