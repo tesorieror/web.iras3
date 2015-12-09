@@ -72,6 +72,10 @@ chart.factory('chartCategorySrv', function($http, $q, $log, database) {
 				return cat.selection.toggleCategoryIdVisible(cat._id)
 			}
 
+			cat.isChangeable = function(){
+				return cat.selection.isCategoryIdChangeable(cat._id)
+			}
+			
 			return cat;
 		}
 		return _.map(categories, decorateCategory)

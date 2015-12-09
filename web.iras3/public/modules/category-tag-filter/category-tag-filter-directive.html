@@ -10,15 +10,15 @@
 					</div>
 					<div class="well well-sm" style="overflow: auto;">
 						<ul class="list-unstyled">
-							<li data-ng-repeat="cat in categories | filter:categoryStringFilter" class="noselect" data-ng-class="{'category-not-visible':!cat.isVisible()}">
+							<li data-ng-repeat="cat in categories | filter:categoryStringFilter" class="noselect" data-ng-class="{'category-not-visible':!cat.isVisible()}" data-ng-show="cat.isChangeable()">
 								<div class="title">
 									<span
 										data-ng-class="{'glyphicon glyphicon-exclamation-sign error':getSelectedTagsForCategory(cat).length==0,'glyphicon glyphicon-ok ok':getSelectedTagsForCategory(cat).length==1,'glyphicon glyphicon-warning-sign warn':getSelectedTagsForCategory(cat).length>1}"></span>
 									<span data-ng-class="{'pointer':true,'icon-radio-unchecked':!cat.isSelected() ,'icon-radio-checked':cat.isSelected()}"
-										data-ng-click="categoryClicked(cat)"></span> <span data-ng-click="categoryExpandCollapseIconClicked(cat)"
+										data-ng-click="categoryClicked(cat)"></span> <span data-ng-click="categoryVisibleIconClicked(cat)"
+										data-ng-class="{'pointer':true,'icon-eye-3': cat.isVisible() ,'icon-eye-blocked': !cat.isVisible()}"></span><span data-ng-click="categoryExpandCollapseIconClicked(cat)"
 										data-ng-class="{'pointer':true,'glyphicon glyphicon-triangle-right':cat.isCollapsed() ,'glyphicon glyphicon-triangle-bottom':cat.isExpanded()}"></span>
-									<span data-ng-click="categoryVisibleIconClicked(cat)"
-										data-ng-class="{'pointer':true,'icon-eye-3': cat.isVisible() ,'icon-eye-blocked': !cat.isVisible()}"></span> {{cat.description}}&nbsp;({{cat._id}})
+									 {{cat.description}}&nbsp;({{cat._id}})
 								</div>
 
 								<ul class="list-unstyled" data-ng-show="cat.isExpanded()">

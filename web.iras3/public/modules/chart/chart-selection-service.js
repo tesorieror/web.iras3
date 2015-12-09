@@ -11,6 +11,7 @@ chart.factory('chartSelectionSrv', function($http, $q, $log, chartBuilder) {
 		self.categoryIds = []
 		self.selectedCategoryId = null
 		self.visibleCategoryIds = []
+		self.changeableCategoryIds = []
 		self.expandedCategoryIds = []
 		self.selectedTagIds = []
 		self.expandedSelectedTagIds = []
@@ -59,10 +60,10 @@ chart.factory('chartSelectionSrv', function($http, $q, $log, chartBuilder) {
 			return self.categoryIds
 		}
 
-		self.getVisibleCategoryIds = function(){
+		self.getVisibleCategoryIds = function() {
 			return self.visibleCategoryIds
 		}
-		
+
 		self.selectCategoryId = function(catId) {
 			self.selectedCategoryId = catId
 		}
@@ -143,6 +144,18 @@ chart.factory('chartSelectionSrv', function($http, $q, $log, chartBuilder) {
 				self.collapseCategoryId(catId);
 			else
 				self.expandCategoryId(catId);
+		}
+
+		/***************************************************************************
+		 * Category changeable
+		 */
+
+		self.isCategoryIdChangeable = function(catId) {
+			return _.contains(self.changeableCategoryIds, catId)
+		}
+
+		self.setChangeableCategoryIds = function(catIds) {
+			self.changeableCategoryIds = catIds
 		}
 
 		/***************************************************************************
@@ -245,12 +258,15 @@ chart.factory('chartSelectionSrv', function($http, $q, $log, chartBuilder) {
 		var tagIds = [ 'YR-2014', 'YR-2013', 'SS-FRE', 'DS-POSGRA', 'GE-MAL',
 				'NA-SAU', 'SSYS-MAS', 'IT-PUBUNI', 'IN-KINABDUNI', 'CO-SCI', 'SE-PHY',
 				'SP-PHY' ]
-		var visibleCategoryIds = [ 'YR', 'SS', 'DS', 'GE', 'NA', 'SSYS', 'IT',
-				'IN', 'CO', 'SE', 'SP' ]
+		var visibleCategoryIds = [ 'YR', 'GE', 'NA', 'SSYS', 'IN', 'CO',
+				'SE', 'SP' ]
+		var changeableCategoryIds = [ 'YR', 'GE', 'NA', 'SSYS', 'IT', 'IN', 'CO',
+				'SE', 'SP' ]
 		selection.setCategoryIds(categoryIds)
 		selection.selectCategoryId(categoryIds[0])
 		selection.selectTagsByIds(tagIds)
 		selection.showCategoryIds(visibleCategoryIds)
+		selection.setChangeableCategoryIds(changeableCategoryIds)
 		factory.registerSelection('2-15', selection)
 
 	}
