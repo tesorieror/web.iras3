@@ -1,0 +1,69 @@
+
+<div class="row">
+	<div class="col-xs-12">
+		<h4>{{chartDescription}}</h4>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Chart</h3>
+			</div>
+			<div class="panel-body">
+				<form class="form-inline">
+					<div class="form-group">
+						<fieldset>
+							<input type="text" class="form-control" placeholder="Search" data-ng-model="searchString" data-ng-change="searchStringChanged()">
+						</fieldset>
+					</div>
+					<div class="form-group">
+						<div class="btn-toolbar" role="toolbar" aria-label="Chart filter toolbar">
+							<div class="btn-group btn-group" role="group" aria-label="Chart Filter">
+								<button type="button" class="btn btn-default" aria-label="Filter" data-ng-click="chartFilterButtonClicked()">
+									<span class="mif-filter"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+				<br />
+				<div google-chart chart="chartObject" style="width: 100%;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Filter Information</h3>
+			</div>
+			<div class="panel-body">
+				<small>
+					<dl class="dl-horizontal filter-summary">
+						<span data-ng-repeat="cat in categories">
+							<dt>
+								<span data-ng-bind="cat.description + ' ('+cat.name+')'"></span>
+							</dt>
+							<dd>
+								<div data-ng-repeat="tag in getSelectedTagsForCategory(cat)">
+									<span data-ng-bind="tag.description"></span>&nbsp;(<span data-ng-bind="tag.name"></span>)
+									<div data-ng-repeat="dep in getSelectedDependenciesForTag(tag)" style="padding-left: 10px;">
+										<span data-ng-repeat="depTag in dep.tags"> <span ng-bind="depTag.description +' ('+ depTag.category +')'"> </span>
+										</span>
+									</div>
+								</div>
+							</dd>
+						</span>
+					</dl>
+				</small>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

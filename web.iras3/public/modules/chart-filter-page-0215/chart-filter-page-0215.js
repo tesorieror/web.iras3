@@ -61,37 +61,30 @@ chartFilterPage0215
 					}
 
 					$scope.descriptionTableButtonClicked = function() {
-						selection.selectDescriptionTable()
 						$location.path('/pages/full-table-chart-page-0215')
 					}
 
 					$scope.fullTableButtonClicked = function() {
-
 						$location.path('/pages/full-table-chart-page-0215')
 					}
 
 					$scope.summaryTableButtonClicked = function() {
-
-						$location.path('/pages/chart')
+						$location.path('/pages/summary-table-chart-page-0215')
 					}
 
 					$scope.lineChartButtonClicked = function() {
-
 						$location.path('/pages/chart')
 					}
 
 					$scope.columnChartButtonClicked = function() {
-
 						$location.path('/pages/chart')
 					}
 
 					$scope.areaChartButtonClicked = function() {
-
 						$location.path('/pages/chart')
 					}
 
 					$scope.pieChartButtonClicked = function() {
-
 						$location.path('/pages/chart')
 					}
 

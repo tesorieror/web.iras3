@@ -1,0 +1,1 @@
+var summaryTableChart = angular.module('summaryTableChart', ['pageHeader','chart','commons' ]);
