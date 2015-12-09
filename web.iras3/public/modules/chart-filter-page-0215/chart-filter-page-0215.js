@@ -2,11 +2,11 @@
  * ChartFilter
  */
 
-chartFilterPage
+chartFilterPage0215
 		.controller(
-				'ChartFilterPageCtrl',
+				'ChartFilterPage0215Ctrl',
 				function($scope, $log, $location, chartCategorySrv, chartTagSrv, chartSelectionSrv) {
-					$log.log('ChartFilterPage controller loaded!')
+					$log.log('ChartFilterPage0215 controller loaded!')
 
 					var selection = chartSelectionSrv.getSelection('2-15')
 
@@ -62,36 +62,36 @@ chartFilterPage
 
 					$scope.descriptionTableButtonClicked = function() {
 						selection.selectDescriptionTable()
-						$location.path('/pages/chart')
+						$location.path('/pages/full-table-chart-page-0215')
 					}
 
 					$scope.fullTableButtonClicked = function() {
-						selection.selectFullTable()
-						$location.path('/pages/chart')
+
+						$location.path('/pages/full-table-chart-page-0215')
 					}
 
 					$scope.summaryTableButtonClicked = function() {
-						selection.selectSummaryTable()
+
 						$location.path('/pages/chart')
 					}
 
 					$scope.lineChartButtonClicked = function() {
-						selection.selectLineChart()
+
 						$location.path('/pages/chart')
 					}
 
 					$scope.columnChartButtonClicked = function() {
-						selection.selectColumnChart()
+
 						$location.path('/pages/chart')
 					}
 
 					$scope.areaChartButtonClicked = function() {
-						selection.selectAreaChart()
+
 						$location.path('/pages/chart')
 					}
 
 					$scope.pieChartButtonClicked = function() {
-						selection.selectPieChart()
+
 						$location.path('/pages/chart')
 					}
 

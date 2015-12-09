@@ -1,1 +1,0 @@
-var chartPage = angular.module('chartPage', ['pageHeader','chart','commons','fullTableChart' ]);

@@ -1,0 +1,1 @@
+var fullTableChartPage0215 = angular.module('fullTableChartPage0215', ['pageHeader','chart','commons','fullTableChart' ]);

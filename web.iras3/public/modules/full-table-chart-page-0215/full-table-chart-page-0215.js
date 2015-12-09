@@ -1,8 +1,8 @@
-chartPage
+fullTableChartPage0215
 		.controller(
-				'ChartPageCtrl',
+				'FullTableChartPage0215Ctrl',
 				function($scope, $log, $location, $filter, chartCategorySrv, chartTagSrv, chartIndicatorSrv, chartSelectionSrv, c) {
-					$log.log('ChartPage controller loaded!')
+					$log.log('FullTableChartPage0215 controller loaded!')
 
 					$scope.subtitle = 'Full Table Chart'
 					var chartDescriptionPrefix = 'New students in post-graduate education, according to the college section and specialization for the academic years '
@@ -70,7 +70,7 @@ chartPage
 
 					$scope.chartFilterButtonClicked = function() {
 						$log.log('ChartFilterButton clicked!')
-						$location.path('/pages/chart-filter')
+						$location.path('/pages/chart-filter-page-0215')
 					}
 
 				})

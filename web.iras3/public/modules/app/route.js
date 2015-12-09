@@ -20,13 +20,13 @@ app
 						templateUrl : '/pages/about-unit/about-unit.html',
 						controller : 'AboutUnitCtrl'
 					})
-					.when('/pages/chart-filter', {
-						templateUrl : '/modules/chart-filter-page/chart-filter-page.html',
-						controller : 'ChartFilterPageCtrl'
+					.when('/pages/chart-filter-page-0215', {
+						templateUrl : '/modules/chart-filter-page-0215/chart-filter-page-0215.html',
+						controller : 'ChartFilterPage0215Ctrl'
 					})
-					.when('/pages/chart', {
-						templateUrl : '/modules/chart-page/chart-page.html',
-						controller : 'ChartPageCtrl'
+					.when('/pages/full-table-chart-page-0215', {
+						templateUrl : '/modules/full-table-chart-page-0215/full-table-chart-page-0215.html',
+						controller : 'FullTableChartPage0215Ctrl'
 					})
 
 					// .when('/goalOfUnit', {
