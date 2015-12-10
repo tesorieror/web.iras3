@@ -40,6 +40,11 @@ app
 						templateUrl : '/modules/description-table-chart-page-0215/description-table-chart-page-0215.html',
 						controller : 'DescriptionTableChartPage0215Ctrl'
 					})
+					.when('/pages/column-chart-page-0215', {
+						templateUrl : '/modules/column-chart-page-0215/column-chart-page-0215.html',
+						controller : 'ColumnChartPage0215Ctrl'
+					})
+					
 					// .when('/goalOfUnit', {
 					// templateUrl : './goal-of-unit/goal-of-unit.html',
 					// controller : 'GoalOfUnitCtrl'

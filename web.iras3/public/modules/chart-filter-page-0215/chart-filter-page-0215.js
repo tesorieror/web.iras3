@@ -81,7 +81,7 @@ chartFilterPage0215
 					}
 
 					$scope.columnChartButtonClicked = function() {
-						$location.path('/pages/chart')
+						$location.path('/pages/column-chart-page-0215')
 					}
 
 					$scope.areaChartButtonClicked = function() {
