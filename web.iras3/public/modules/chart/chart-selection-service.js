@@ -222,9 +222,14 @@ chart.factory('chartSelectionSrv',
 				var selection = new Selection();
 				var categoryIds = [ 'YR', 'SS', 'DS', 'GE', 'NA', 'SSYS', 'IT', 'IN',
 						'CO', 'SE', 'SP' ]
-				var tagIds = [ 'YR-2014', 'YR-2013', 'SS-FRE', 'DS-POSGRA', 'GE-MAL',
-						'NA-SAU', 'SSYS-MAS', 'IT-PUBUNI', 'IN-KINABDUNI', 'CO-SCI',
-						'SE-PHY', 'SP-PHY' ]
+				// var tagIds = [ 'YR-2014', 'YR-2013', 'SS-FRE', 'DS-POSGRA', 'GE-MAL',
+				// 'NA-SAU', 'SSYS-MAS', 'IT-PUBUNI', 'IN-KINABDUNI', 'CO-SCI',
+				// 'SE-PHY', 'SP-PHY' ]
+
+				var tagIds = [ 'YR-2014', 'YR-2013', 'YR-2012', 'YR-2011', 'YR-2010',
+						'YR-2009', 'YR-2008', 'YR-2007', 'YR-2006', 'YR-2005', 'SS-FRE',
+						'DS-POSGRA', 'GE-ANYGEN', 'NA-ANYNAT', 'SSYS-TOT', 'IT-ALLINSTYP',
+						'IN-TOTHIGEDUINSINKIN', 'CO-TOT', 'SE-TOT', 'SP-TOT' ]
 				var visibleCategoryIds = [ 'YR', 'GE', 'NA', 'SSYS', 'IN', 'CO', 'SE',
 						'SP' ]
 				var changeableCategoryIds = [ 'YR', 'GE', 'NA', 'SSYS', 'IT', 'IN',

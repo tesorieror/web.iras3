@@ -13,7 +13,7 @@
 							<li data-ng-repeat="cat in categories | filter:categoryStringFilter" class="noselect" data-ng-class="{'category-not-visible':!cat.isVisible()}" data-ng-show="cat.isChangeable()">
 								<div class="title">
 									<span
-										data-ng-class="{'glyphicon glyphicon-exclamation-sign error':getSelectedTagsForCategory(cat).length==0,'glyphicon glyphicon-ok ok':getSelectedTagsForCategory(cat).length==1,'glyphicon glyphicon-warning-sign warn':getSelectedTagsForCategory(cat).length>1}"></span>
+										data-ng-class="{'glyphicon glyphicon-exclamation-sign error':selectedTagsByCategory[cat._id].length==0,'glyphicon glyphicon-ok ok':selectedTagsByCategory[cat._id].length==1,'glyphicon glyphicon-warning-sign warn':selectedTagsByCategory[cat._id].length>1}"></span>
 									<span data-ng-class="{'pointer':true,'icon-radio-unchecked':!cat.isSelected() ,'icon-radio-checked':cat.isSelected()}"
 										data-ng-click="categoryClicked(cat)"></span> <span data-ng-click="categoryVisibleIconClicked(cat)"
 										data-ng-class="{'pointer':true,'icon-eye-3': cat.isVisible() ,'icon-eye-blocked': !cat.isVisible()}"></span><span data-ng-click="categoryExpandCollapseIconClicked(cat)"
@@ -22,7 +22,7 @@
 								</div>
 
 								<ul class="list-unstyled" data-ng-show="cat.isExpanded()">
-									<li data-ng-repeat="tag in getSelectedTagsForCategory(cat) | filter:categoryStringFilter" class="noselect dependencies">
+									<li data-ng-repeat="tag in selectedTagsByCategory[cat._id] | filter:categoryStringFilter" class="noselect dependencies">
 										<div>
 											<span data-ng-click="selectedTagExpandCollapseIconClicked(tag)" data-ng-show="tag.hasSelectedDependencies()"
 												data-ng-class="{'pointer':true,'glyphicon glyphicon-triangle-right' : tag.isCollapsed() ,'glyphicon glyphicon-triangle-bottom' : tag.isExpanded()}"></span>&nbsp;&nbsp;

@@ -25,6 +25,12 @@ categoryTagFilter
 categoryTagFilter.controller('CategoryTagFilterCtrl', function($scope, $log) {
 	$log.log('CategoryTagFilterCtrl loaded!')
 
+	// Cache
+	
+	$scope.selectedTagsByCategory = {}
+	
+	// End of Cache
+	
 	$scope.$watchCollection('categories', function(newValue, oldValue) {
 		updateSelectedCategory()
 	})
@@ -54,14 +60,8 @@ categoryTagFilter.controller('CategoryTagFilterCtrl', function($scope, $log) {
 	})
 
 	$scope.$watchCollection('selectedTags', function(newValue, oldValue) {
-
+		updateSelectedTagsByCategory(newValue)
 	})
-
-	$scope.getSelectedTagsForCategory = function(cat) {
-		return _.select($scope.selectedTags, function(selTag) {
-			return selTag.category._id == cat._id
-		})
-	}
 
 	function cleanUnavailableSelectedTags() {
 		var ok = false
@@ -93,6 +93,14 @@ categoryTagFilter.controller('CategoryTagFilterCtrl', function($scope, $log) {
 			cleanUnavailableSelectedTags()
 	}
 
+	function updateSelectedTagsByCategory(selectedTags){
+		$scope.selectedTagsByCategory = _.groupBy(selectedTags, function(tag){
+			return tag.category._id
+		})
+		//$log.log('tbyC',$scope.selectedTagsByCategory)
+	}
+	
+	
 	/*****************************************************************************
 	 * Events
 	 */
