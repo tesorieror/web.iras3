@@ -34,6 +34,7 @@ chart.factory('chartIndicatorSrv', function($http, $q, $log, database) {
 			indicator.getKeyWoYr = function() {
 				return _.pluck(indicator.tags.slice(1), '_id').join('_')
 			}
+			
 			return indicator
 		}
 

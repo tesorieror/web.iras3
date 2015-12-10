@@ -1,0 +1,1 @@
+var columnChart = angular.module('columnChart', ['pageHeader','chart','commons' ]);
