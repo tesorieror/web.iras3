@@ -1,0 +1,1 @@
+var descriptionTableChartPage0215 = angular.module('descriptionTableChartPage0215', ['pageHeader','chart','commons','descriptionTableChart' ]);

@@ -1,0 +1,1 @@
+var descriptionTableChart = angular.module('descriptionTableChart', ['pageHeader','chart','commons' ]);

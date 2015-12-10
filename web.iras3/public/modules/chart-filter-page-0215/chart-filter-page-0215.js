@@ -61,7 +61,7 @@ chartFilterPage0215
 					}
 
 					$scope.descriptionTableButtonClicked = function() {
-						$location.path('/pages/full-table-chart-page-0215')
+						$location.path('/pages/description-table-chart-page-0215')
 					}
 
 					$scope.fullTableButtonClicked = function() {

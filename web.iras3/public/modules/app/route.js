@@ -32,6 +32,10 @@ app
 						templateUrl : '/modules/summary-table-chart-page-0215/summary-table-chart-page-0215.html',
 						controller : 'SummaryTableChartPage0215Ctrl'
 					})
+					.when('/pages/description-table-chart-page-0215', {
+						templateUrl : '/modules/description-table-chart-page-0215/description-table-chart-page-0215.html',
+						controller : 'DescriptionTableChartPage0215Ctrl'
+					})
 					// .when('/goalOfUnit', {
 					// templateUrl : './goal-of-unit/goal-of-unit.html',
 					// controller : 'GoalOfUnitCtrl'
