@@ -1,0 +1,1 @@
+var plainFullTableChart = angular.module('plainFullTableChart', ['pageHeader','chart','commons' ]);

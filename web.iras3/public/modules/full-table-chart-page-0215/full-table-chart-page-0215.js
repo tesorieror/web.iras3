@@ -12,9 +12,9 @@ fullTableChartPage0215
 					chartIndicatorSrv.setSelection(selection)
 					chartTagSrv.setSelection(selection)
 
-//					$scope.indicators = [];
-//					$scope.selectedTags = [];
-//					$scope.categories = [];
+					// $scope.indicators = [];
+					// $scope.selectedTags = [];
+					// $scope.categories = [];
 
 					/*********************************************************************
 					 * Initialization
@@ -25,7 +25,6 @@ fullTableChartPage0215
 					}
 
 					function loadCategories() {
-						// return chartCategorySrv.loadVisibleCategories()
 						return chartCategorySrv.loadCategories()
 					}
 
@@ -39,9 +38,7 @@ fullTableChartPage0215
 					}
 
 					function setCategories(cats) {
-						$log.log('cats', $scope.categories)
 						$scope.categories = cats
-						$log.log('cats', $scope.categories)
 					}
 
 					function setIndicators(inds) {

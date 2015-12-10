@@ -129,7 +129,7 @@ summaryTableChart
 												var tags = indicator.tags.slice(1)
 												var data = _.map(tags, function(tag) {
 													return {
-														"v" : tag.description,
+														"v" : tag.name,
 														"p" : {
 															"style" : "text-align:center; "
 																	+ "font-size: smaller;"

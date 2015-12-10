@@ -1,10 +1,10 @@
-summaryTableChartPage0215
+plainFullTableChartPage0215
 		.controller(
-				'SummaryTableChartPage0215Ctrl',
+				'PlainFullTableChartPage0215Ctrl',
 				function($scope, $log, $location, $filter, chartCategorySrv, chartTagSrv, chartIndicatorSrv, chartSelectionSrv, c) {
-					$log.log('SummaryTableChartPage0215 controller loaded!')
+					$log.log('PlainFullTableChartPage0215 controller loaded!')
 
-					$scope.subtitle = 'Summary Table Chart'
+					$scope.subtitle = 'Plain Full Table Chart'
 					var chartDescriptionPrefix = 'New students in post-graduate education, according to the college section and specialization for the academic years '
 
 					var selection = chartSelectionSrv.getSelection('2-15')
@@ -12,9 +12,9 @@ summaryTableChartPage0215
 					chartIndicatorSrv.setSelection(selection)
 					chartTagSrv.setSelection(selection)
 
-					// $scope.indicators = [];
-					// $scope.selectedTags = [];
-					// $scope.categories = [];
+//					$scope.indicators = [];
+//					$scope.selectedTags = [];
+//					$scope.categories = [];
 
 					/*********************************************************************
 					 * Initialization
@@ -25,6 +25,7 @@ summaryTableChartPage0215
 					}
 
 					function loadCategories() {
+						// return chartCategorySrv.loadVisibleCategories()
 						return chartCategorySrv.loadCategories()
 					}
 
@@ -38,7 +39,9 @@ summaryTableChartPage0215
 					}
 
 					function setCategories(cats) {
+						$log.log('cats', $scope.categories)
 						$scope.categories = cats
+						$log.log('cats', $scope.categories)
 					}
 
 					function setIndicators(inds) {
