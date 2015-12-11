@@ -44,7 +44,10 @@ app
 						templateUrl : '/modules/column-chart-page-0215/column-chart-page-0215.html',
 						controller : 'ColumnChartPage0215Ctrl'
 					})
-					
+					.when('/pages/bar-chart-page-0215', {
+						templateUrl : '/modules/bar-chart-page-0215/bar-chart-page-0215.html',
+						controller : 'BarChartPage0215Ctrl'
+					})					
 					// .when('/goalOfUnit', {
 					// templateUrl : './goal-of-unit/goal-of-unit.html',
 					// controller : 'GoalOfUnitCtrl'
