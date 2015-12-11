@@ -68,7 +68,14 @@ app
 								templateUrl : '/modules/line-chart-page-0215/line-chart-page-0215.html',
 								controller : 'LineChartPage0215Ctrl'
 							})
-					// .when('/goalOfUnit', {
+					.when(
+							'/pages/area-chart-page-0215',
+							{
+								templateUrl : '/modules/area-chart-page-0215/area-chart-page-0215.html',
+								controller : 'AreaChartPage0215Ctrl'
+							})
+							
+							// .when('/goalOfUnit', {
 					// templateUrl : './goal-of-unit/goal-of-unit.html',
 					// controller : 'GoalOfUnitCtrl'
 					// })

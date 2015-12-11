@@ -89,7 +89,7 @@ chartFilterPage0215
 					}
 					
 					$scope.areaChartButtonClicked = function() {
-						$location.path('/pages/bar-chart-page-0215')
+						$location.path('/pages/area-chart-page-0215')
 					}
 
 					$scope.pieChartButtonClicked = function() {
