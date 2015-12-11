@@ -8,7 +8,7 @@ var app = angular.module('app',
 				'chartFilterPage0215', 'plainFullTableChartPage0215',
 				'fullTableChartPage0215', 'summaryTableChartPage0215',
 				'descriptionTableChartPage0215', 'columnChartPage0215',
-				'barChartPage0215' ]);
+				'barChartPage0215','lineChartPage0215' ]);
 
 /**
  * Avoid cache (review this for optimization)

@@ -1,0 +1,1 @@
+var lineChart = angular.module('lineChart', ['pageHeader','chart','commons' ]);

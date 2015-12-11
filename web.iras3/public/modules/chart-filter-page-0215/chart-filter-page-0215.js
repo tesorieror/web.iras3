@@ -77,7 +77,7 @@ chartFilterPage0215
 					}
 
 					$scope.lineChartButtonClicked = function() {
-						$location.path('/pages/chart')
+						$location.path('/pages/line-chart-page-0215')
 					}
 
 					$scope.columnChartButtonClicked = function() {
@@ -89,7 +89,7 @@ chartFilterPage0215
 					}
 					
 					$scope.areaChartButtonClicked = function() {
-						$location.path('/pages/chart')
+						$location.path('/pages/bar-chart-page-0215')
 					}
 
 					$scope.pieChartButtonClicked = function() {

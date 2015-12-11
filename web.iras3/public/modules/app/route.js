@@ -20,34 +20,54 @@ app
 						templateUrl : '/pages/about-unit/about-unit.html',
 						controller : 'AboutUnitCtrl'
 					})
-					.when('/pages/chart-filter-page-0215', {
-						templateUrl : '/modules/chart-filter-page-0215/chart-filter-page-0215.html',
-						controller : 'ChartFilterPage0215Ctrl'
-					})
-					.when('/pages/full-table-chart-page-0215', {
-						templateUrl : '/modules/full-table-chart-page-0215/full-table-chart-page-0215.html',
-						controller : 'FullTableChartPage0215Ctrl'
-					})
-					.when('/pages/plain-full-table-chart-page-0215', {
-						templateUrl : '/modules/plain-full-table-chart-page-0215/plain-full-table-chart-page-0215.html',
-						controller : 'PlainFullTableChartPage0215Ctrl'
-					})
-					.when('/pages/summary-table-chart-page-0215', {
-						templateUrl : '/modules/summary-table-chart-page-0215/summary-table-chart-page-0215.html',
-						controller : 'SummaryTableChartPage0215Ctrl'
-					})
-					.when('/pages/description-table-chart-page-0215', {
-						templateUrl : '/modules/description-table-chart-page-0215/description-table-chart-page-0215.html',
-						controller : 'DescriptionTableChartPage0215Ctrl'
-					})
-					.when('/pages/column-chart-page-0215', {
-						templateUrl : '/modules/column-chart-page-0215/column-chart-page-0215.html',
-						controller : 'ColumnChartPage0215Ctrl'
-					})
-					.when('/pages/bar-chart-page-0215', {
-						templateUrl : '/modules/bar-chart-page-0215/bar-chart-page-0215.html',
-						controller : 'BarChartPage0215Ctrl'
-					})					
+					.when(
+							'/pages/chart-filter-page-0215',
+							{
+								templateUrl : '/modules/chart-filter-page-0215/chart-filter-page-0215.html',
+								controller : 'ChartFilterPage0215Ctrl'
+							})
+					.when(
+							'/pages/full-table-chart-page-0215',
+							{
+								templateUrl : '/modules/full-table-chart-page-0215/full-table-chart-page-0215.html',
+								controller : 'FullTableChartPage0215Ctrl'
+							})
+					.when(
+							'/pages/plain-full-table-chart-page-0215',
+							{
+								templateUrl : '/modules/plain-full-table-chart-page-0215/plain-full-table-chart-page-0215.html',
+								controller : 'PlainFullTableChartPage0215Ctrl'
+							})
+					.when(
+							'/pages/summary-table-chart-page-0215',
+							{
+								templateUrl : '/modules/summary-table-chart-page-0215/summary-table-chart-page-0215.html',
+								controller : 'SummaryTableChartPage0215Ctrl'
+							})
+					.when(
+							'/pages/description-table-chart-page-0215',
+							{
+								templateUrl : '/modules/description-table-chart-page-0215/description-table-chart-page-0215.html',
+								controller : 'DescriptionTableChartPage0215Ctrl'
+							})
+					.when(
+							'/pages/column-chart-page-0215',
+							{
+								templateUrl : '/modules/column-chart-page-0215/column-chart-page-0215.html',
+								controller : 'ColumnChartPage0215Ctrl'
+							})
+					.when(
+							'/pages/bar-chart-page-0215',
+							{
+								templateUrl : '/modules/bar-chart-page-0215/bar-chart-page-0215.html',
+								controller : 'BarChartPage0215Ctrl'
+							})
+					.when(
+							'/pages/line-chart-page-0215',
+							{
+								templateUrl : '/modules/line-chart-page-0215/line-chart-page-0215.html',
+								controller : 'LineChartPage0215Ctrl'
+							})
 					// .when('/goalOfUnit', {
 					// templateUrl : './goal-of-unit/goal-of-unit.html',
 					// controller : 'GoalOfUnitCtrl'
