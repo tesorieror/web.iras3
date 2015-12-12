@@ -74,8 +74,20 @@ app
 								templateUrl : '/modules/area-chart-page-0215/area-chart-page-0215.html',
 								controller : 'AreaChartPage0215Ctrl'
 							})
-							
-							// .when('/goalOfUnit', {
+					.when(
+							'/pages/pie-chart-page-0215',
+							{
+								templateUrl : '/modules/pie-chart-page-0215/pie-chart-page-0215.html',
+								controller : 'PieChartPage0215Ctrl'
+							})
+
+					.when(
+							'/pages/pie-chart-2-page-0215',
+							{
+								templateUrl : '/modules/pie-chart-2-page-0215/pie-chart-2-page-0215.html',
+								controller : 'PieChart2Page0215Ctrl'
+							})
+					// .when('/goalOfUnit', {
 					// templateUrl : './goal-of-unit/goal-of-unit.html',
 					// controller : 'GoalOfUnitCtrl'
 					// })

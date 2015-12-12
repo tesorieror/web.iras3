@@ -1,0 +1,1 @@
+var pieChart2Page0215 = angular.module('pieChart2Page0215', ['pageHeader','chart','commons','pieChart2' ]);

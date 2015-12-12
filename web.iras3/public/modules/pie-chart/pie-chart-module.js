@@ -1,0 +1,1 @@
+var pieChart = angular.module('pieChart', ['pageHeader','chart','commons' ]);

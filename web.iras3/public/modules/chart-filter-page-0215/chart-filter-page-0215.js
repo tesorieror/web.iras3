@@ -93,9 +93,11 @@ chartFilterPage0215
 					}
 
 					$scope.pieChartButtonClicked = function() {
-						$location.path('/pages/chart')
+						$location.path('/pages/pie-chart-page-0215')
 					}
-
+					$scope.pieChart2ButtonClicked = function() {
+						$location.path('/pages/pie-chart-2-page-0215')
+					}
 					/*********************************************************************
 					 * Initialize
 					 */
