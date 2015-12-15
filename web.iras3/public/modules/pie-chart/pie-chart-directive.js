@@ -61,9 +61,21 @@ pieChart.controller('PieChartCtrl',
 
 			function buildChart() {
 
-				var indicatorsByYear = {}
+				var yrTags = _.select($scope.selectedTags, function(tag) {
+					return tag.category._id == 'YR'
+				})
+
+				$scope.oneYearOnly = yrTags.length<2
+				
+				var yrTag = _.first(yrTags)
+
+				var dataTags = _.reject($scope.selectedTags, function(tag) {
+					return tag.category._id == 'YR'
+				})
 
 				var indicatorTags = {}
+
+				var indicatorsByYear = {}
 
 				_.each($scope.indicators, function(indicator) {
 					var key = indicator.getKeyWoYr()
@@ -79,31 +91,19 @@ pieChart.controller('PieChartCtrl',
 					})
 				})
 
-				$log.log('indicatorTags', indicatorTags)
-
-				var dataTags = _.reject($scope.selectedTags, function(tag) {
-					return tag.category._id == 'YR'
-				})
-
 				var dataTagsWithIndicators = _.select(dataTags, function(tag) {
 					return indicatorTags[tag._id]
 				})
-
-				$log.log('dataTagsWithIndicators', dataTagsWithIndicators)
 
 				var dataTagsByCategory = _.groupBy(dataTagsWithIndicators,
 						function(tag) {
 							return tag.category._id;
 						});
 
-				$log.log('dataTagsWithIndicators', dataTagsByCategory)
-
 				var differentialTags = _.select(_.values(dataTagsByCategory),
 						function(tagArr) {
 							return tagArr.length > 1
 						})
-
-				$log.log('differentialTags', differentialTags)
 
 				function product(arr1, arr2) {
 					if (arr1.length < 1)
@@ -127,8 +127,6 @@ pieChart.controller('PieChartCtrl',
 					return product(acc, arr)
 				}, [])
 
-				$log.log('tagDesc', tagDesc)
-
 				var descLabels = _.map(tagDesc, function(arr) {
 					return _.map(arr, function(tag) {
 						return tag.description
@@ -137,8 +135,6 @@ pieChart.controller('PieChartCtrl',
 
 				if (descLabels.length == 0)
 					descLabels = [ 'Students' ]
-
-				$log.log(descLabels)
 
 				var yearCol = [ {
 					"id" : 'year_id',
@@ -157,43 +153,41 @@ pieChart.controller('PieChartCtrl',
 				})
 				var cols = yearCol.concat(descCols)
 
-				$log.log('indicatorsByYear', indicatorsByYear)
-
-				var rows = []
-
-				_.each(_.values(indicatorsByYear), function(indicatorsObj) {
-					var indicators = _.values(indicatorsObj)
-					var data = [ {
-						"v" : indicators[0].getYrTag().description,
-					} ]
-
-					indicators = _.sortBy(indicators, function(indicator) {
-						var indicatorTagIds = _.pluck(indicator.tags, '_id')
-						var i = 0
-						var ok = false
-						while (!ok) {
-							ok = _.all(tagDesc[i], function(tag) {
-								return _.contains(indicatorTagIds, tag._id)
-							})
-							if (!ok)
-								i++;
-						}
-						return i
-					})
-
-					_.each(indicators, function(indicator) {
-						data.push({
-							"v" : indicator.value,
-						})
-					})
-
-					data.push(null)
-					rows.push({
-						'c' : data
-					})
+				var validIndicators = _.select($scope.indicators, function(indicator) {
+					var tagIds = _.pluck(indicator.tags, '_id')
+					return _.contains(tagIds, yrTag._id)
 				})
 
-				$log.log(rows)
+				var validIndicatorsSortedByDescLabels = _.sortBy(validIndicators,
+						function(indicator) {
+							var indicatorTagIds = _.pluck(indicator.tags, '_id')
+							var i = 0
+							var ok = false
+							while (!ok) {
+								ok = _.all(tagDesc[i], function(tag) {
+									return _.contains(indicatorTagIds, tag._id)
+								})
+								if (!ok)
+									i++;
+							}
+							return i
+						})
+
+				var rows = []
+				var i = 0
+				_.each(validIndicatorsSortedByDescLabels, function(indicator) {
+					rows.push({
+						'c' : [ {
+							"v" : descLabels[i],
+						}, {
+							"v" : parseInt(indicator.value),
+						}, null ]
+					})
+					i++
+				})
+
+				$log.log('rows', rows)
+				$log.log('cols', cols)
 
 				return {
 					'type' : 'PieChart',
@@ -203,18 +197,13 @@ pieChart.controller('PieChartCtrl',
 						'rows' : rows
 					},
 					'options' : {
-						'is3D':true,
+						'title' : $scope.chartDescription,
+						'is3D' : true,
 						"displayExactValues" : true,
-						'width' : '100%',
-						'height' : '500px',
+//						'width' : '100%',
+//						'height' : '800px',
 						'allowHtml' : true,
 						'legend' : 'bottom',
-						"vAxis" : {
-							"title" : "Students",
-							"gridlines" : {
-								"count" : 10
-							}
-						}
 					}
 				}
 			}

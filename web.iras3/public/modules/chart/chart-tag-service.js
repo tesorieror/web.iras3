@@ -5,6 +5,9 @@ chart.factory('chartTagSrv', function($http, $q, $log, database) {
 
 	factory.setSelection = function(sel) {
 		selection = sel
+//		$log.log('selection', selection)
+//		$log.log('selectedTagIds', selection.selectedTagIds)
+//		$log.log('getSelectedTagIds', selection.getSelectedTagIds());
 	}
 
 	factory.loadTagsWithDependenciesForCategory = function(cat) {
@@ -18,6 +21,7 @@ chart.factory('chartTagSrv', function($http, $q, $log, database) {
 	}
 
 	factory.loadSelectedTagsWithDependencies = function() {
+		// $log.log('stid',selection.getSelectedTagIds());
 		return loadTagByIdsWithDependencies(selection.getSelectedTagIds())
 	}
 

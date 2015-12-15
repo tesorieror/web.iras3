@@ -8,7 +8,7 @@ var app = angular.module('app', [ 'ngRoute', 'ngAnimate', 'ui.bootstrap',
 		'fullTableChartPage0215', 'summaryTableChartPage0215',
 		'descriptionTableChartPage0215', 'columnChartPage0215', 'barChartPage0215',
 		'lineChartPage0215', 'areaChartPage0215', 'pieChartPage0215',
-		'pieChart2Page0215' ]);
+		'pieChart2Page0215', 'pieChartFilterPage0215' ]);
 
 /**
  * Avoid cache (review this for optimization)

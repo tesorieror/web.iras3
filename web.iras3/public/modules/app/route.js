@@ -27,6 +27,12 @@ app
 								controller : 'ChartFilterPage0215Ctrl'
 							})
 					.when(
+							'/pages/pie-chart-filter-page-0215',
+							{
+								templateUrl : '/modules/pie-chart-filter-page-0215/pie-chart-filter-page-0215.html',
+								controller : 'PieChartFilterPage0215Ctrl'
+							})
+					.when(
 							'/pages/full-table-chart-page-0215',
 							{
 								templateUrl : '/modules/full-table-chart-page-0215/full-table-chart-page-0215.html',

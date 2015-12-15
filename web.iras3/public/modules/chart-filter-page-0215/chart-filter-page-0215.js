@@ -9,16 +9,17 @@ chartFilterPage0215
 					$log.log('ChartFilterPage0215 controller loaded!')
 
 					var selection = chartSelectionSrv.getSelection('2-15')
+										
+//					$log.log('selection', selection)
 
 					$scope.categories = []
 					$scope.selectedCategory = null
 					$scope.tags = []
 					$scope.selectedTags = []
 
-					function initialize() {
+					function initialize() {					
 						chartCategorySrv.setSelection(selection)
 						chartTagSrv.setSelection(selection)
-
 						loadCategories()//
 						.then(setCategories)//
 						.then(loadSelectedTags)//
@@ -38,7 +39,8 @@ chartFilterPage0215
 					}
 
 					function setSelectedTags(selectedTags) {
-						$scope.selectedTags = selectedTags
+//						$log.log('selectedTags', selectedTags)
+						$scope.selectedTags = selectedTags						
 					}
 
 					function loadTagsForCategory(cat) {
@@ -71,7 +73,7 @@ chartFilterPage0215
 					$scope.plainFullTableButtonClicked = function() {
 						$location.path('/pages/plain-full-table-chart-page-0215')
 					}
-					
+
 					$scope.summaryTableButtonClicked = function() {
 						$location.path('/pages/summary-table-chart-page-0215')
 					}
@@ -87,7 +89,7 @@ chartFilterPage0215
 					$scope.barChartButtonClicked = function() {
 						$location.path('/pages/bar-chart-page-0215')
 					}
-					
+
 					$scope.areaChartButtonClicked = function() {
 						$location.path('/pages/area-chart-page-0215')
 					}

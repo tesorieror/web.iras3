@@ -7,7 +7,7 @@ pieChartPage0215
 					$scope.subtitle = 'Pie Chart'
 					var chartDescriptionPrefix = 'New students in post-graduate education, according to the college section and specialization for the academic years '
 
-					var selection = chartSelectionSrv.getSelection('2-15')
+					var selection = chartSelectionSrv.getSelection('2-15-pie')
 					chartCategorySrv.setSelection(selection)
 					chartIndicatorSrv.setSelection(selection)
 					chartTagSrv.setSelection(selection)
@@ -67,7 +67,7 @@ pieChartPage0215
 
 					$scope.chartFilterButtonClicked = function() {
 						$log.log('ChartFilterButton clicked!')
-						$location.path('/pages/chart-filter-page-0215')
+						$location.path('/pages/pie-chart-filter-page-0215')
 					}
 
 				})

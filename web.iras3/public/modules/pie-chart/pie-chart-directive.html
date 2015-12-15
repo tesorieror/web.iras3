@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="row">
 	<div class="col-xs-12">
 		<h4>{{chartDescription}}</h4>
@@ -12,6 +12,8 @@
 				<h3 class="panel-title">Chart</h3>
 			</div>
 			<div class="panel-body">
+			  <p ng-hide="oneYearOnly">  <span class="glyphicon glyphicon-warning-sign warn"></span> Warning! More than one year selected! The first one is used only</p> 
+
 				<form class="form-inline">
 					<div class="form-group">
 						<fieldset>
@@ -29,17 +31,44 @@
 					</div>
 				</form>
 				<br />
+				 
 				<div google-chart chart="chartObject" style="width: 100%; height: 500px;"></div>
 			</div>
 		</div>
 	</div>
 </div>
-
+style="width: 100%; height: 500px;"
+-->
 <div class="row">
 	<div class="col-xs-12">
+		<div google-chart chart="chartObject" style="height: 480px;"></div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12">
+		<h5 style="cursor: pointer; text-align: center;" data-ng-click="chartFilterButtonClicked()">Filter Information</h5>
+		<small>
+			<dl class="dl-horizontal filter-summary">
+				<span data-ng-repeat="cat in categories">
+					<dt>
+						<span data-ng-bind="cat.description + ' ('+cat.name+')'"></span>
+					</dt>
+					<dd>
+						<div data-ng-repeat="tag in getSelectedTagsForCategory(cat)">
+							<span data-ng-bind="tag.description"></span>&nbsp;(<span data-ng-bind="tag.name"></span>)
+							<div data-ng-repeat="dep in getSelectedDependenciesForTag(tag)" style="padding-left: 10px;">
+								<span data-ng-repeat="depTag in dep.tags"> <span ng-bind="depTag.description +' ('+ depTag.category +')'"> </span>
+								</span>
+							</div>
+						</div>
+					</dd>
+				</span>
+			</dl>
+		</small>
+		<!-- 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">Filter Information</h3>
+				<h3 class="panel-title" style="cursor: pointer;" data-ng-click="chartFilterButtonClicked()">Filter Information</h3>
 			</div>
 			<div class="panel-body">
 				<small>
@@ -62,6 +91,7 @@
 				</small>
 			</div>
 		</div>
+		 -->
 	</div>
 </div>
 

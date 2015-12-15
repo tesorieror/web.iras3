@@ -13,7 +13,7 @@
 							<li data-ng-repeat="cat in categories | filter:categoryStringFilter" class="noselect" data-ng-class="{'category-not-visible':!cat.isVisible()}" data-ng-show="cat.isChangeable()">
 								<div class="title">
 									<span
-										data-ng-class="{'glyphicon glyphicon-exclamation-sign error':selectedTagsByCategory[cat._id].length==0,'glyphicon glyphicon-ok ok':selectedTagsByCategory[cat._id].length==1,'glyphicon glyphicon-warning-sign warn':selectedTagsByCategory[cat._id].length>1}"></span>
+										data-ng-class="{'glyphicon glyphicon-exclamation-sign error':selectedTagsByCategory[cat._id]==null,'glyphicon glyphicon-ok ok':selectedTagsByCategory[cat._id].length==1,'glyphicon glyphicon-warning-sign warn':selectedTagsByCategory[cat._id].length>1}"></span>
 									<span data-ng-class="{'pointer':true,'icon-radio-unchecked':!cat.isSelected() ,'icon-radio-checked':cat.isSelected()}"
 										data-ng-click="categoryClicked(cat)"></span> <span data-ng-click="categoryVisibleIconClicked(cat)"
 										data-ng-class="{'pointer':true,'icon-eye-3': cat.isVisible() ,'icon-eye-blocked': !cat.isVisible()}"></span><span data-ng-click="categoryExpandCollapseIconClicked(cat)"
